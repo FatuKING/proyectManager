@@ -3,14 +3,19 @@ import './models/Task.ts'
 import './models/Project.ts'
 import express from 'express'
 import { sequelize } from './databases/databases.ts'
-import { createRouter } from './routes/appRoutes.ts'
+import { projectRouter } from './routes/projectRoutes.ts'
+import { userRouter } from './routes/userRoutes.ts'
+import { taskRouter } from './routes/taskRoutes.ts'
 
 const app = express()
 
 app.use(express.json())
 app.disable('x-powered-by')
 
-app.use('/', createRouter())
+app.get('/', )
+app.use('/user', userRouter())
+app.use('/project', projectRouter())
+app.use('/task', taskRouter())
 
 const PORT: number = Number(process.env.PORT) || 3000
 
