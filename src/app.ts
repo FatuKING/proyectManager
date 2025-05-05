@@ -1,16 +1,18 @@
-import express from 'express'
-import { sequelize } from './databases/databases.ts'
 import './models/User.ts'
 import './models/Task.ts'
 import './models/Project.ts'
-
+import express from 'express'
+import { sequelize } from './databases/databases.ts'
+import { createRouter } from './routes/appRoutes.ts'
 
 const app = express()
 
 app.use(express.json())
 app.disable('x-powered-by')
 
-const PORT: number = 3000
+app.use('/', createRouter())
+
+const PORT: number = Number(process.env.PORT) || 3000
 
 ;(async () => {
     try {
