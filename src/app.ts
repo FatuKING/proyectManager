@@ -2,8 +2,9 @@ import './models/User.ts'
 import './models/Task.ts'
 import './models/Project.ts'
 import express from 'express'
+import path from 'path'
 import { sequelize } from './databases/databases.ts'
-import { projectRouter } from './routes/projectRoutes.ts'
+import projectRouter from './routes/projectRoutes.ts'
 import { userRouter } from './routes/userRoutes.ts'
 import { taskRouter } from './routes/taskRoutes.ts'
 
@@ -12,10 +13,13 @@ const app = express()
 app.use(express.json())
 app.disable('x-powered-by')
 
-app.get('/', )
-app.use('/user', userRouter())
+app.get('/', (req, res) => {
+    const filePath = path.join(__dirname, 'views', 'index.html')
+    res.sendFile(filePath)
+})
+// app.use('/user', userRouter())
 app.use('/project', projectRouter())
-app.use('/task', taskRouter())
+// app.use('/task', taskRouter())
 
 const PORT: number = Number(process.env.PORT) || 3000
 

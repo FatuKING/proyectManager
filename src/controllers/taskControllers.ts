@@ -1,3 +1,5 @@
+import { Request, Response } from "express";
+
 export class TaskController {
     private taskModel: any
 
@@ -5,15 +7,15 @@ export class TaskController {
         this.taskModel = taskModel
     }
     
-    deleteTask = async (req, res) => {
+    // deleteTask = async (req: Request, res: Response): Promise<void> => {
         
-    }
+    // }
 
-    updateTask = async (req, res) => {
+    // updateTask = async (req: Request, res: Response): Promise<void> => {
 
-    }
+    // }
 
-    createTask = async (req, res) => {
+    // createTask = async (req: Request, res: Response): Promise<void> => {
 
-    }
+    // }
 }

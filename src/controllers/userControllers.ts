@@ -1,3 +1,5 @@
+import { Request, Response } from "express";
+
 export class UserController {
     private userModel: any
 
@@ -5,11 +7,11 @@ export class UserController {
         this.userModel = userModel
     }
     
-    registerUser = async (req, res) => {
+    // registerUser = async (req: Request, res: Response): Promise<void> => {
         
-    }
+    // }
 
-    loginUser = async (req, res) => {
+    // loginUser = async (req: Request, res: Response): Promise<void> => {
 
-    }
+    // }
 }

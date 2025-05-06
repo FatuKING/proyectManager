@@ -5,12 +5,12 @@ import { User } from "../models/User.ts";
 export function userRouter(): RouterType {
     const router = Router()
 
-    const userModel = User
+    // const userModel = User
 
-    const userControllers = new UserController(userModel)
+    // const userControllers = new UserController(userModel)
 
-    router.post('/login', userControllers.loginUser)
-    router.post('/register', userControllers.registerUser)
+    // router.post('/login', userControllers.loginUser)
+    // router.post('/register', userControllers.registerUser)
 
     return router
 }
